@@ -1,165 +1,3 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-<meta charset="UTF-8">
-<title>FreshAirX™ – Den revolutionerande luftrenaren!</title>
-<style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-    header { background: linear-gradient(90deg, #4CAF50, #2e7d32); color: white; padding: 20px; text-align: center; }
-    header h1 { margin: 0; }
-    .hero { background: white; padding: 40px 20px; text-align: center; position: relative; }
-    .hero h1 { font-size: 40px; margin-bottom: 10px; }
-    .hero p { font-size: 20px; margin: 5px 0; }
-    .btn { background: #ff5722; color: white; padding: 15px 25px; text-decoration: none; font-size: 20px; border-radius: 5px; display: inline-block; margin-top: 10px; }
-    .btn:hover { background: #e64a19; }
-    .section { padding: 40px 20px; background: white; margin: 20px; border-radius: 10px; }
-    .section h2 { margin-top: 0; }
-    .warning { background: #ffe6e6; border-left: 6px solid red; padding: 20px; margin-top: 20px; }
-    .flag { background: #fff3cd; border-left: 6px solid #ff9800; padding: 20px; margin-top: 20px; }
-    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    .review { display: flex; align-items: center; margin-bottom: 15px; }
-    .review img { width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; }
-    .popup { 
-        position: fixed; bottom: 20px; left: 20px; 
-        background: white; padding: 15px; border-radius: 10px; 
-        box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-        display: none; 
-        z-index: 999;
-        font-size: 14px;
-    }
-    .timer { font-size: 24px; color: red; font-weight: bold; margin: 10px 0; }
-    .badge-row { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
-    .badge { background: #eeeeee; padding: 8px 15px; border-radius: 20px; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
-    .badge span { font-size: 16px; }
-    .video-placeholder { background: #000; color: #ccc; height: 220px; display: flex; align-items: center; justify-content: center; border-radius: 10px; position: relative; }
-    .video-placeholder::after {
-        content: "▶";
-        font-size: 48px;
-        color: #fff;
-        position: absolute;
-    }
-    .stats-bar { background: #e3f2fd; padding: 10px 20px; text-align: center; font-size: 14px; }
-    .stats-highlight { font-weight: bold; color: #1565c0; }
-    .timeline { border-left: 3px solid #ccc; padding-left: 15px; margin-top: 15px; }
-    .timeline-item { margin-bottom: 10px; }
-    .quiz-question { margin-bottom: 10px; }
-    .quiz-result { font-weight: bold; margin-top: 10px; }
-    .cert-row { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
-    .cert-box { background: #f1f8e9; border: 1px solid #c5e1a5; padding: 10px 15px; border-radius: 8px; font-size: 14px; flex: 1 1 150px; }
-    .cert-title { font-weight: bold; margin-bottom: 5px; }
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>FreshAirX™</h1>
-    <p>Den revolutionerande luftrenaren som förändrar allt!</p>
-</header>
-
-<div class="stats-bar">
-    Just nu: <span class="stats-highlight" id="viewerCount"></span> personer tittar på den här sidan. <span class="stats-highlight">14</span> personer har köpt de senaste 24 timmarna.
-</div>
-
-<div class="hero">
-    <h1>Andas ren luft – direkt!</h1>
-    <p>Endast idag: <strong>499 kr</strong> (ord. 1499 kr!)</p>
-    <p class="timer" id="countdown"></p>
-    <a class="btn" href="#">KÖP NU</a>
-    <p><em>Begränsat lager! Endast 7 kvar!</em></p>
-
-    <div class="badge-row">
-        <div class="badge"><span>✅</span>Fri frakt</div>
-        <div class="badge"><span>⚡</span>Snabb leverans</div>
-        <div class="badge"><span>🛡️</span>“Livstidsgaranti”</div>
-        <div class="badge"><span>🇸🇪</span>“Svenskt företag”</div>
-    </div>
-</div>
-
-<div class="section">
-    <h2>“Kundrecensioner”</h2>
-
-    <div class="review">
-        <img src="https://via.placeholder.com/60" alt="kund">
-        <p><strong>Johan H (Stockholm):</strong> “Jag har aldrig andats så bra i hela mitt liv!”</p>
-    </div>
-
-    <div class="review">
-        <img src="https://via.placeholder.com/60" alt="kund">
-        <p><strong>Patrika L (Göteborg):</strong> “Min katt luktar inte längre någonting!”</p>
-    </div>
-
-    <div class="review">
-        <img src="https://via.placeholder.com/60" alt="kund">
-        <p><strong>Erik S (Malmö):</strong> “FreshAirX™ förändrade mitt hem på 24 timmar!”</p>
-    </div>
-
-    <div class="flag">
-        <h3>🚩 Röd flagga: Fejkade recensioner</h3>
-        <p>Dessa namn och bilder är placeholders. Bluff-sidor använder ofta stockbilder eller AI-genererade ansikten, och anger svenska orter för att öka trovärdigheten.</p>
-    </div>
-</div>
-
-<div class="section">
-    <h2>Som syns i:</h2>
-    <p>[Här skulle loggor från kända medier visas – men inga visas.]</p>
-
-    <div class="flag">
-        <h3>🚩 Röd flagga: “Som syns i” utan bevis</h3>
-        <p>Bluff-sidor skriver ofta “Som syns i” för att lura hjärnan att tro att produkten är känd, men visar inga verkliga logotyper eller länkar.</p>
-    </div>
-</div>
-
-<div class="section">
-    <h2>“Produktvideo”</h2>
-    <div class="video-placeholder">
-        Produktvideo spelas upp...
-    </div>
-    <p style="margin-top:10px;">“Se hur FreshAirX™ renar luften på sekunder!”</p>
-
-    <div class="flag">
-        <h3>🚩 Röd flagga: Otydlig eller fejkad video</h3>
-        <p>Många bluffar använder generiska reklamfilmer som inte visar den faktiska produkten i bruk, eller återanvänder material från andra produkter.</p>
-    </div>
-</div>
-
-<div class="section">
-    <h2>Teknisk information</h2>
-    <p>FreshAirX™ använder avancerad <strong>Quantum-Ion NanoBoost™</strong>-teknologi med <strong>Triple-Phase HyperFilter™</strong> och <strong>BioActive AirFlow™</strong>.</p>
-    <p>Utvecklad av ledande experter inom luftkvalitet.*</p>
-    <p style="font-size:12px; color:#777;">*Inga faktiska namn eller studier anges.</p>
-
-    <div class="cert-row">
-        <div class="cert-box">
-            <div class="cert-title">“Certified CleanAir 2025”</div>
-            <div>Påhittad märkning som låter seriös.</div>
-        </div>
-        <div class="cert-box">
-            <div class="cert-title">“99,9% effektivitet”</div>
-            <div>Ingen källa eller testmetod redovisas.</div>
-        </div>
-        <div class="cert-box">
-            <div class="cert-title">“Laboratorietestad”</div>
-            <div>Inga laboratorier eller rapporter nämns.</div>
-        </div>
-    </div>
-
-    <div class="flag">
-        <h3>🚩 Röd flagga: Påhittad teknik och certifieringar</h3>
-        <p>Bluffprodukter använder gärna tekniska ord och “certifikat” som inte går att verifiera. Seriösa produkter länkar till riktiga tester, laboratorier och standarder.</p>
-    </div>
-</div>
-
-<div class="section">
-    <h2>“Livstidsgaranti”</h2>
-    <p>För endast 49 kr extra får du en garanti som täcker ALLT – utan frågor!</p>
-    <p>Gäller vid retur till vår internationella logistikpartner.*</p>
-    <p style="font-size:12px; color:#777;">*Adress, land och villkor specificeras först efter köp.</p>
-
-    <div class="flag">
-        <h3>🚩 Röd flagga: Garantier som inte går att använda</h3>
-        <p>En vanlig fälla: jättefin garanti i texten, men svår eller omöjlig att använda i praktiken. Otydliga villkor, oklar adress och dyra returfrakter är typiskt.</p>
-    </div>
 </div>
 
 <div class="section">
@@ -239,50 +77,124 @@ function startCountdown() {
         const seconds = time % 60;
         timer.textContent = `Erbjudandet upphör om: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
         time--;
-        if (time < 0) time = 300;
-    }, 1000);
-}
-startCountdown();
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>AeroPure QuantumSphere™ – Den “revolutionerande” luftrenaren</title>
+<style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; }
+    header { background: linear-gradient(90deg, #4CAF50, #2e7d32); color: white; padding: 25px; text-align: center; }
+    .hero { background: white; padding: 40px 20px; text-align: center; }
+    .hero h1 { font-size: 42px; margin-bottom: 10px; }
+    .hero p { font-size: 20px; margin: 5px 0; }
+    .product-img { width: 260px; margin: 20px auto; display: block; border-radius: 20px; }
+    .btn { background: #ff5722; color: white; padding: 15px 25px; text-decoration: none; font-size: 20px; border-radius: 5px; display: inline-block; margin-top: 10px; }
+    .section { background: white; margin: 20px; padding: 30px; border-radius: 10px; }
+    .flag { background: #fff3cd; border-left: 6px solid #ff9800; padding: 15px; margin-top: 20px; }
+    .satire { background: #e3f2fd; border-left: 6px solid #2196f3; padding: 20px; margin-top: 20px; }
+    .serious { background: #f5f5f5; border-left: 6px solid #555; padding: 25px; margin-top: 30px; }
+    .icon { font-size: 60px; text-align: center; margin-bottom: 10px; }
+    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
 
-// Fake popup
-function showPopup() {
-    const popup = document.getElementById("popup");
-    popup.style.display = "block";
-    setTimeout(() => { popup.style.display = "none"; }, 4000);
-}
-setInterval(showPopup, 15000);
+<body>
 
-// Fake viewer count
-function randomViewerCount() {
-    return Math.floor(Math.random() * 40) + 15; // 15–54
-}
-document.getElementById("viewerCount").textContent = randomViewerCount();
+<header>
+    <h1>AeroPure QuantumSphere™</h1>
+    <p>“Den mest avancerade luftrenaren någonsin skapad”*</p>
+</header>
 
-// Quiz logic
-let quizScore = 0;
-let answered = {1: false, 2: false, 3: false};
+<div class="hero">
+    <h1>Andas ren luft – direkt!</h1>
+    <p>Endast idag: <strong>499 kr</strong> (ord. 1999 kr!)</p>
+    <img class="product-img" src="https://via.placeholder.com/260x260.png?text=AeroPure+QuantumSphere%E2%84%A2" alt="produkt">
+    <a class="btn" href="#">KÖP NU</a>
+    <p><em>*Påståendet saknar vetenskaplig grund.</em></p>
+</div>
 
-function quizAnswer(question, correct) {
-    const id = "quiz" + question;
-    const elem = document.getElementById(id);
-    if (answered[question]) return;
+<div class="section">
+    <h2>“Kundrecensioner”</h2>
+    <p><strong>Johan, 5/5:</strong> “Jag känner mig som en ny människa!”</p>
+    <p><strong>Patrika, 5/5:</strong> “Min luft är 300% renare nu!”</p>
+    <p><strong>Erik, 5/5:</strong> “Jag köpte tre stycken!”</p>
 
-    answered[question] = true;
-    if (correct) {
-        elem.textContent = "Rätt! 👍";
-        elem.style.color = "green";
-        quizScore++;
-    } else {
-        elem.textContent = "Fel. Fundera på vilka röda flaggor du såg här.";
-        elem.style.color = "red";
-    }
+    <div class="flag">
+        <h3>🚩 Röd flagga: Orealistiskt positiva recensioner</h3>
+        <p>Bluffprodukter använder ofta överdrivna eller helt påhittade omdömen.</p>
+    </div>
+</div>
 
-    if (answered[1] && answered[2] && answered[3]) {
-        const result = document.getElementById("quizResult");
-        result.textContent = `Du fick ${quizScore} av 3 rätt. Ju fler rätt, desto bättre är du på att avslöja bluffar.`;
-    }
-}
-</script>
+<div class="section">
+    <h2>“Teknologi”</h2>
+    <p>AeroPure QuantumSphere™ använder <strong>Quantum‑Ion HyperBoost™</strong> och <strong>BioActive NanoFlow™</strong>.</p>
+
+    <div class="flag">
+        <h3>🚩 Röd flagga: Pseudovetenskapliga ord</h3>
+        <p>Ord som “Quantum”, “NanoFlow” och “HyperBoost” används ofta för att låta avancerade utan att betyda något.</p>
+    </div>
+</div>
+
+<div class="section satire">
+    <h2>Hmm… något känns bekant här</h2>
+    <p>Har du märkt hur allt låter lite… för bra? Som om någon försöker sälja dig en mirakelmaskin?</p>
+    <p>Och varför är recensionerna så perfekta? Och varför finns inga riktiga tester?</p>
+    <p>Det är nästan som om…</p>
+</div>
+
+<div class="section satire">
+    <h2>…den här sidan är en parodi</h2>
+    <p>För det är den. Allt ovanför är medvetet överdrivet, färgglatt och “för bra för att vara sant”.</p>
+    <p>Det är exakt så bluffprodukter brukar presenteras.</p>
+</div>
+
+<div class="section serious">
+    <div class="icon">📘</div>
+    <h2>Nu blir det allvar – lär dig känna igen bluffar</h2>
+    <p>Den här sidan är ett utbildningsprojekt. AeroPure QuantumSphere™ finns inte.  
+    Allt är skapat för att visa hur lätt det är att bli lurad av:</p>
+
+    <ul>
+        <li>överdrivna löften</li>
+        <li>påhittad teknik</li>
+        <li>fejkade recensioner</li>
+        <li>stressande erbjudanden</li>
+        <li>professionell men falsk design</li>
+    </ul>
+
+    <h3>Scam vs. Äkta produkt</h3>
+    <ul>
+        <li><strong>Scam:</strong> “99,9% effektivitet!” – utan bevis</li>
+        <li><strong>Äkta:</strong> Länkar till tester, laboratorier och standarder</li>
+        <li><strong>Scam:</strong> “Livstidsgaranti!” – otydliga villkor</li>
+        <li><strong>Äkta:</strong> Klara, juridiskt bindande garantier</li>
+        <li><strong>Scam:</strong> Fejkade recensioner</li>
+        <li><strong>Äkta:</strong> Verifierade omdömen från riktiga kunder</li>
+    </ul>
+
+    <h3>Varför går folk på bluffar?</h3>
+    <p>Bluffar använder psykologiska knep som:</p>
+    <ul>
+        <li>social bekräftelse (“andra köper just nu!”)</li>
+        <li>tidsstress (“erbjudandet upphör snart!”)</li>
+        <li>auktoritet (“experter rekommenderar!”)</li>
+        <li>falsk trygghet (“certifierad!”)</li>
+    </ul>
+
+    <h3>Kom ihåg</h3>
+    <p>Om något låter för bra för att vara sant – så är det oftast det.</p>
+</div>
+
+<div class="section serious">
+    <h2>Om detta projekt</h2>
+    <p>Den här sidan är skapad för att hjälpa människor att känna igen bluffprodukter online.  
+    Allt innehåll är påhittat och används endast i utbildningssyfte.</p>
+</div>
+
+<footer>
+    <p>Utbildningsprojekt – Lär dig känna igen bluffar online.</p>
+</footer>
 
 </body>
 </html>
